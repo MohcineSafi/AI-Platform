@@ -12,10 +12,10 @@ import {
   Settings,
   VideoIcon,
 } from "lucide-react";
-// import { useLocation } from "react-router-dom";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import { FreeCounter } from "@/components/free-counter";
 
 const poppins = Montserrat({ weight: "600", subsets: ["latin"] });
 
@@ -63,9 +63,13 @@ const routes = [
   },
 ];
 
-const Sidebar = () => {
-  // const location = useLocation();
-  // const pathname = location.pathname;
+export const Sidebar = ({
+  apiLimitCount = 0,
+  isPro = false,
+}: {
+  apiLimitCount: number;
+  isPro: boolean;
+}) => {
   const pathname = usePathname();
 
   return (
@@ -99,8 +103,7 @@ const Sidebar = () => {
           ))}
         </div>
       </div>
+      <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} />
     </div>
   );
 };
-
-export default Sidebar;
