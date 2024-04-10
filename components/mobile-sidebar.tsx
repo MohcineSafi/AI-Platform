@@ -9,7 +9,7 @@ import { Sidebar } from "@/components/sidebar";
 
 export const MobileSidebar = ({
   apiLimitCount = 0,
-  isPro = false,
+  isPro = false
 }: {
   apiLimitCount: number;
   isPro: boolean;

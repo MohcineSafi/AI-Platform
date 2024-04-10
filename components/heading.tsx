@@ -1,11 +1,11 @@
-import { LucideIcon } from "lucide-react";
+import { Icon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 interface HeadingProps {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: Icon;
   iconColor?: string;
   bgColor?: string;
 }
@@ -25,11 +25,11 @@ export const Heading = ({
         </div>
         <div>
           <h2 className="text-3xl font-bold">{title}</h2>
-          <p className="text-sm text-muted-foreground">{description}</p>
+          <p className="text-sm text-muted-foreground">
+            {description}
+          </p>
         </div>
       </div>
     </>
   );
 };
-
-export default Heading;
